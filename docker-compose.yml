@@ -30,8 +30,9 @@ services:
     command:
       [
         "node",
-        "openclaw.mjs",
+        "dist/index.js",
         "gateway",
+        "run",
         "--bind",
         "${OPENCLAW_GATEWAY_BIND:-lan}",
         "--port",
@@ -75,6 +76,6 @@ services:
     stdin_open: true
     tty: true
     init: true
-    entrypoint: [ "node", "openclaw.mjs" ]
+    entrypoint: [ "node", "dist/index.js" ]
     depends_on:
       - openclaw-gateway
